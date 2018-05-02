@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
-const testregex = value => /\W/gi.test(value);
+const testRegexMaj = value => /[A-Z]/g.test(value)
+const testRegexSpe = value => /\W/g.test(value);
 
 class Password extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Password extends Component {
     this.validPassword = this.validPassword.bind(this);
   }
 
-  statusPassword(event, func) {
+  statusPassword(event, func, funct) {
     const newText = event.target.value;
     const obj = {
       value: newText,
@@ -26,18 +27,18 @@ class Password extends Component {
       validation: "",
       disabled: "true"
     };
-    if (newText.length >= 6 && func(newText)) {
+    if (newText.length >= 6 && func(newText) && funct(newText)) {
       obj.passwordText = "fort";
-      obj.proposition = " Et il comporte des caractères spéciaux";
+      obj.proposition = " Et il comporte des caractères spéciaux et des majuscules";
       obj.disabled = "";
-    } else if (newText.length >= 6) {
+    } else if (newText.length >= 6 && funct(newText)) {
       obj.passwordText = "moyen";
       obj.proposition = " Tu pourrais ajouter des caractères spéciaux";
       obj.disabled = "";
     } else if (newText.length > 0) {
       obj.passwordText = "faible";
       obj.proposition =
-        " Tu pourrais ajouter d'autres caractères pour l'allonger";
+        " Tu pourrais ajouter d'autres caractères pour l'allonger et ajouter des majuscules ou des caractères spéciaux";
       obj.disabled = "true";
     }
     this.setState(obj);
@@ -62,7 +63,7 @@ class Password extends Component {
               type="password"
               name="password"
               value={this.state.value}
-              onChange={e => this.statusPassword(e, testregex)}
+              onChange={e => this.statusPassword(e, testRegexSpe, testRegexMaj)}
             />
           </label>
           <input type="submit" value="Submit" disabled={this.state.disabled} />
