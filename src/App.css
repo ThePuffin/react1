@@ -8,8 +8,9 @@
 }
 
 .App-header {
-    background-color: #222;
+    background-image: linear-gradient(to right, darkblue, blue );
     height: 150px;
+    width: 100 vw;
     padding: 20px;
     color: white;
 }
@@ -35,4 +36,18 @@
     font-family: "Courier New", Courier, monospace;
     color: orangered;
     font-size: 1vw;
+}
+
+.divRoutes {
+    text-align: center;
+}
+
+.routes {
+    color: black;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.activeRoute {
+    color: red;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../logo.svg";
+import logo from "../puffin.png";
 import Author from "./Author";
 import Password from "./Password";
 
