@@ -31,6 +31,7 @@ class Home extends Component {
         <br />
         <p> Il est possible d'accéder à différentes routes</p>
       </div>
+      
     );
   }
 }
