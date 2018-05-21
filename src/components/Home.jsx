@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "../puffin.png";
 import Author from "./Author";
 import Password from "./Password";
+import Timer from "./Timer";
 
 
 class Home extends Component {
@@ -26,11 +27,17 @@ class Home extends Component {
           <p> et si nous rentrions un mot de passe pour sécuriser tout ça ?</p>
           <Password />
         </div>
+        <div>
+        <br/>
+        <Timer />
+        <hr/>
+        </div>
         <br />
         <hr />
         <br />
         <p> Il est possible d'accéder à différentes routes</p>
       </div>
+
       
     );
   }
