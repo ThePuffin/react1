@@ -29,8 +29,11 @@ class Timer extends Component {
     console.log("un update a eu lieu");
   }
   horloge() {
+    //recuperation de la date
     const laDate = new Date();
+    // mise en forme de l'heure
     const laMaintenant = `il est : ${laDate.getHours()}h:${laDate.getMinutes()}min:${laDate.getSeconds()}s`;
+    //changement du state
     setInterval(() => this.setState({ time: laMaintenant }), 1000);
   }
 
