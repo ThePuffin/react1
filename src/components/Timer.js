@@ -13,9 +13,10 @@ class Timer extends Component {
   //   console.log("la création va avoir lieu");
   // }
 
-  // componentDidMount() {
-  //   console.log("la création a eu lieu");
-  // }
+  componentDidMount() {
+    // console.log("la création a eu lieu");
+     setInterval(() => this.horloge(), 1000);
+  }
 
   // componentWillUnmount() {
   //   console.log("le composant va être retiré");
@@ -34,11 +35,11 @@ class Timer extends Component {
     // mise en forme de l'heure
     const laMaintenant = `il est : ${laDate.getHours()}h:${laDate.getMinutes()}min:${laDate.getSeconds()}s`;
     //changement du state
-    setInterval(() => this.setState({ time: laMaintenant }), 1000);
+    this.setState({ time: laMaintenant });
   }
 
   render() {
-    this.horloge();
+   
     return (
       <div>
         <h4>{this.state.time}</h4>
